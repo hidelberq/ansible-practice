@@ -1,0 +1,6 @@
+---
+- hosts: vagrants
+  user: vagrant
+  tasks:
+    - file: path=/tmp/ansible-test state=directory
+
