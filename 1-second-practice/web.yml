@@ -1,11 +1,11 @@
 - hosts: web # target セクション
-  # become: yes # sudo を使う
-  # vars: # vars セクション
-  #   logdir: /var/log/app
+  become: yes # sudo を使う
+  vars: # vars セクション
+    logdir: /var/log/app
   tasks: # tasks セクション
-    # - name: 実行用ユーザーの作成
-    #   user: name=appuser
+    - name: 実行用ユーザーの作成
+      user: name=appuser
     - name: ログディレクトリの作成
       file: path={{ logdir }} state=directory
-    # - name: nginxのインストール
-    #   yum: name=nginx state=installed
+    - name: nginxのインストール
+      yum: name=nginx state=installed
